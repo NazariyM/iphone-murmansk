@@ -1,0 +1,20 @@
+if ask ? ask : ask = []
+if ask.title ? ask.title : ask.title = 'Есть вопросы?'
+if ask.subTitle ? ask.subTitle : ask.subTitle = 'Оставьте заявку и мы перезвоним Вам!'
+
+//begin ask
++b.SECTION.ask.section(class= ask.classMod ? ask.classMod : '' style='background-image: url(img/bg/ask_bg.jpg)')
+	+e.container.container
+		+e.inner
+			+e.inner-text
+				+e.title.title
+					h3= ask.title
+				p= ask.subTitle
+			+e.FORM.form(action='#!' method='POST')
+				+e.form-field
+					+b.INPUT.input(type='text' name='' placeholder='Ваше имя' required)
+				+e.form-field
+					+b.INPUT.input(type='text' name='' placeholder='Номер телефона' required)
+				+e.form-submit-wrap
+					+e.INPUT.form-submit.btn._blue(type='submit' value='отправить заявку')
+//end ask

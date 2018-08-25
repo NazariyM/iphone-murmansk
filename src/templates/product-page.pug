@@ -1,0 +1,110 @@
+---
+title: Карта товара
+---
+extends layouts/_layout
+
+block variables
+	-headerClass = '_white'
+
+block content
+
+	+b.MAIN.has-fixed-header
+
+		+breadcrumbs(null, 'Главная', 'Apple iPhone 8 Plus', 'Apple iPhone 8 Plus - 256 Гб серебристый (Айфон 8 Плюс)')
+
+		//begin product
+		+b.SECTION.product
+			+e.container.container
+				+e.view
+					+e.view-img
+						+e.view-img-item
+							+e.IMG(src='img/products/product-card_img-1.jpg' alt='image')
+						+e.view-img-item
+							+e.IMG(src='img/products/product-card_img-2.jpg' alt='image')
+						+e.view-img-item
+							+e.IMG(src='img/products/product-card_img-1.jpg' alt='image')
+						+e.view-img-item
+							+e.IMG(src='img/products/product-card_img-2.jpg' alt='image')
+					+e.view-thumbs
+						+e.view-thumbs-item
+							+e.IMG(src='img/products/product-card_img_sm-1.jpg' alt='image')
+						+e.view-thumbs-item
+							+e.IMG(src='img/products/product-card_img_sm-2.jpg' alt='image')
+						+e.view-thumbs-item
+							+e.IMG(src='img/products/product-card_img_sm-3.jpg' alt='image')
+						+e.view-thumbs-item
+							+e.IMG(src='img/products/product-card_img_sm-4.jpg' alt='image')
+
+				+e.data
+					+e.data-top
+						+e.H2.name.title Apple iPhone 8 Plus - 256 Гб серебристый (Айфон 8 Плюс)
+						+e.article Артикул: 118664
+					+e.info
+						+e.info-row
+							+e.STRONG.info-title._font Модель:
+							+e.SPAN.info-descr iPhone 8 Plus
+						+e.info-row
+							+e.STRONG.info-title Материал:
+							+e.SPAN.info-descr Металл, стекло
+						+e.info-row
+							+e.STRONG.info-title Интерфейс подключения:
+							+e.SPAN.info-descr Lightning, Bluetooth, Wi-Fi, NFC
+						+e.info-row
+							+e.STRONG.info-title Количество SIM-карт:
+							+e.SPAN.info-descr Одна
+						+e.info-row
+							+e.STRONG.info-title Тип SIM-карты:
+							+e.SPAN.info-descr Nano-SIM (поддерживает всех операторов России и мира)
+						+e.info-row
+							+e.STRONG.info-title Тип ОС:
+							+e.SPAN.info-descr iOS
+						+e.info-row
+							+e.STRONG.info-title Динамики:
+							+e.SPAN.info-descr Стерео
+						+e.info-row
+							+e.STRONG.info-title Микрофон:
+							+e.SPAN.info-descr Встроенный с шумоподавлением
+					+b.filter-block.product__filter
+						+e.SPAN.title Объем памяти:
+						ul
+							li.is-active
+								+e.A(href='#!') 256 Гб
+							li
+								+e.A(href='#!') 64 Гб
+					+b.color-block.product__color-block
+						+e.SPAN.title Цвет:
+						-colorClass = 1
+						while colorClass < 5
+							+e.LABEL.item(class= `_${colorClass}`)
+								input(type='radio' name='color-picker' checked= colorClass === 2 ? 'checked' : false)
+								+e.DIV.item-visual
+							-colorClass++
+					+e.actions
+						+e.price
+							span 29 900
+							= ' '
+							| руб.
+						+e.buy
+							+e.BUTTON.cart-btn.btn._blue(type='button') в корзину
+							+e.A.buy-link(href='#!') купить в 1 клик
+		//end product
+
+		//begin other-products
+		+b.SECTION.other-products
+			+e.container.container
+				+e.top
+					+e.top-title.title
+						h3 Другие популярные Iphone
+					+e.top-links
+						+e.A(href='#!') Описание
+						+e.A(href='#!') Характеристики
+				+e.row.row
+					+product-item('col other-products__item')
+					+product-item('col other-products__item')
+					+product-item('col other-products__item')
+					+product-item('col other-products__item')
+		//end other-products
+
+		include partials/_why-us
+
+		include partials/_ask

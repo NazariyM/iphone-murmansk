@@ -1,0 +1,312 @@
+.basket-block
+   $parent: &
+   display: flex
+   align-items: center
+   color: $white
+   &__link
+      position: relative
+      margin: 10px 30px 0 0
+      +sm
+         margin: 10px 25px 0 0
+      &:hover svg
+         fill: $color3
+      span
+         position: absolute
+         top: -5px
+         right: -20px
+         height: 18px
+         padding: 0 7px
+         +f('dpro700', 12, 18)
+         border-radius: 9px
+         background: $color3
+      svg
+         font-size: 28px
+         +trs
+         +sm
+            font-size: 24px
+   &__text
+      font-size: 15px
+   &__sum
+      span
+         +f('dpro700', 18)
+         +sm
+            font-size: 16px
+   &_white
+      svg
+         fill: $white
+   &_black
+      svg
+         fill: #aaaeb1
+      .basket-block__text
+         color: $color1
+
+.product-item
+   text-align: center
+   &__inner
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      border: 1px solid #dbe1e6
+      height: 480px
+   &__img
+      margin-bottom: 39px
+   &__name
+      padding: 0 15px
+      margin-bottom: 27px
+      font-size: 18px
+   &__actions
+      display: flex
+      &-btn
+         flex: 0 1 50%
+         height: 44px
+         +f('dpro500', 14, 44)
+         text-transform: uppercase
+         +trs
+         &_white
+            color: $color1
+            background: $white
+            border-top: 1px solid #dbe1e6
+            &:hover
+               color: darken($color3, 25)
+         &_blue
+            background: $color3
+            color: $white
+            &:hover
+               background: darken($color3, 17)
+               color: $white
+
+.novelty-item
+   position: relative
+   display: block
+   text-align: center
+   font-size: 18px
+   background: $white
+   transition: .3s ease
+   &::after
+      +coverdiv
+      z-index: 0
+      background: $white
+      transition: .3s ease
+      content: ''
+   &:hover
+      &::after
+         transform: scale(1.05)
+         box-shadow: 0 0 15px rgba($color1, .3)
+   &__inner
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      padding: 20px 20px 28px
+      z-index: 1
+      height: 380px
+      background: $white
+   &__img
+      display: block
+      margin-bottom: 30px
+   &__text
+      display: block
+   &__name
+      display: block
+      margin-bottom: 5px
+   &__price
+      span
+         +f('dpro700', 22, 30)
+         
+.promo-block
+   position: relative
+   height: 300px
+   background-color: $white
+   background-repeat: no-repeat
+   background-position: 100% 50%
+   +md
+      background-position: 50% 50%
+   &__text
+      position: absolute
+      top: 41%
+      left: 6.6%
+      font-size: 18px
+      +sm
+         top: 55%
+   &__title
+      margin-bottom: 10px
+   &__price
+      span
+         +f('dpro700', 22)
+
+.breadcrumbs
+   padding: 17px 0
+   background-color: #f2f5f7
+   +md
+      padding: 12px 0
+   ul
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      align-items: center
+      font-size: 0
+      li
+         display: inline-flex
+         vertical-align: middle
+         &:not(:last-child)
+            margin-right: 3px
+         &:not(:last-child)::after
+            display: inline-block
+            vertical-align: 0
+            margin-left: 5px
+            pointer-events: none
+            color: #aaaaaa
+            font-size: 15px
+            content: '»'
+         &.is-active a
+            pointer-events: none
+            border-bottom-color: transparent
+         a
+            font-size: 15px
+            color: $color1
+            border-bottom: 1px solid rgba($color1, .6)
+            +trs
+            &:hover
+               border-bottom-color: transparent
+
+.color-block
+   display: flex
+   flex: 1 0 auto
+   align-items: center
+   &__title
+      margin-right: 10px
+      +f('dpro500', 16)
+   &__item
+      position: relative
+      flex: 0 0 32px
+      height: 32px
+      border-radius: 50%
+      cursor: pointer
+      overflow: hidden
+      +sm
+         flex: 0 0 26px
+         height: 26px
+      &:not(:last-child)
+         margin-right: 9px
+      input
+         display: none
+      input:checked ~ &-visual
+         border: 1px solid $color3
+      input:checked ~ &-visual::after
+         transform: scale(1)
+         opacity: 1
+      &_1 &-visual
+         background-color: #dc1b1b
+      &_2 &-visual
+         background-color: #e1e1df
+      &_3 &-visual
+         background-color: #3d3d3d
+      &_4 &-visual
+         background-color: #eec4dd
+      &_5 &-visual
+         background-color: #94959a
+      &_6 &-visual
+         background-color: #080808
+      &_7 &-visual
+         background-color: #d8c0a5
+      &-visual
+         +coverdiv
+         border-radius: 50%
+         transition: .3s ease-in-out
+         &::after
+            +coverdiv
+            +gpu
+            border: 3px solid $white
+            border-radius: 50%
+            opacity: 0
+            transition: .3s ease-in-out
+            content: ''
+            
+.filter-block
+   display: flex
+   align-items: center
+   &__title
+      margin-right: 25px
+      +f('dpro500', 16)
+   ul
+      display: flex
+      align-items: center
+      font-size: 0
+      +sm
+         flex-direction: column
+         align-items: flex-end
+      li
+         &:not(:last-child)
+            margin-right: 25px
+            +sm
+               margin: 0 0 5px
+         &.is-active
+            display: flex
+            align-items: center
+            padding: 0 21px
+            background: $color3
+            border-radius: 16px
+            height: 32px
+            line-height: 32px
+            a
+               color: $white
+               border-bottom-color: transparent
+               pointer-events: none
+         a
+            position: relative
+            border-bottom: 1px solid $color1
+            +f('dpro500', 16, 24)
+            transition: border-bottom-color .3s ease
+            &:hover
+               border-bottom-color: transparent
+
+.pagination
+   &_default
+      margin: 40px 0 0
+   ul
+      display: flex
+      justify-content: center
+      li
+         flex: 0 0 30px
+         margin: 0 3px
+         &.is-active a
+            pointer-events: none
+            +f('dpro700')
+            color: $white
+            background: $color3
+         a
+            display: block
+            height: 30px
+            line-height: 29px
+            border-radius: 50%
+            text-align: center
+            +trs
+            &:hover
+               color: darken($color3, 20)
+               
+.call-block
+   padding: 45px 35px 50px
+   background: $white
+   text-align: center
+   +sm
+      padding: 45px 15px 35px
+   &__text
+      margin-bottom: 20px
+   &__title
+      margin-bottom: 5px
+      +sm
+         font-size: 30px
+   &__sub-title
+      color: $color2
+      font-size: 16px
+      line-height: 24px
+   &__form
+      &-field
+         &:not(:first-child)
+            margin-top: 10px
+      &-submit
+         padding: 15px 59px
+      &-submit-wrap
+         margin-top: 30px
+         +sm
+            margin-top: 20px

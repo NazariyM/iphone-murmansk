@@ -1,0 +1,27 @@
+if whyUs ? whyUs : whyUs = []
+if whyUs.title ? whyUs.title : whyUs.title = 'Почему выбирают IPhone Мурманск'
+
+//begin why-us
++b.SECTION.why-us(class= whyUs.classMod ? whyUs.classMod : '')
+	+e.container.container
+		+e.top-text
+			+e.title.title
+				h2 Почему выбирают IPhone Мурманск
+			p «Iphone Мурманск» — это уникальный сервис, созданный специально для того, чтобы у вас появилась возможность найти весь ассортимент ультрамодных и актуальных товаров на одном сайте, а также быстро заказать качественный ремонт электроники Apple.
+		+e.row.row
+			-
+				whyUsList = [
+				['thumb-up', 'Лучшая цена на IPhone в Мурманске'],
+				['mark-circle', 'Высокое качество товаров'],
+				['delivery-truck', 'Бесплатная доставка'],
+				['sales-ticket', 'Дарим подарки и скидки своим покупателям'],
+				['tablet-backside', 'Оплата после получения IPhone'],
+				['quality', 'Гарантия действует на все модели Iphone']
+				]
+			each item in whyUsList
+				+e.item
+					+e.item-icon-wrap
+						+i(`${item[0]}`, 'why-us__item-icon')
+					+e.item-text
+						p= item[1]
+//end why-us

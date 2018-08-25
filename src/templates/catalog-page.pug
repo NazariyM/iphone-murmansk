@@ -1,0 +1,70 @@
+---
+title: Каталог
+---
+extends layouts/_layout
+
+block variables
+	-headerClass = '_white'
+
+block content
+
+	+b.MAIN
+
+		+breadcrumbs(null, 'Главная', 'Каталог')
+
+		//begin catalog
+		+b.SECTION.catalog
+			+e.container.container
+				+e.top
+					+e.title.title
+						h2 Смартфоны iPhone
+					+e.top-actions
+						+b.color-block.catalog__color-block
+							+e.SPAN.title Цвет:
+							-colorClass = 1
+							while colorClass < 8
+								+e.LABEL.item(class= `_${colorClass}`)
+									input(type='radio' name='color-picker' checked= colorClass === 2 ? 'checked' : false)
+									+e.DIV.item-visual
+								-colorClass++
+
+						+b.filter-block.catalog__filter
+							+e.SPAN.title Сортировать:
+							ul
+								li.is-active
+									+e.A(href='#!') по цене
+								li
+									+e.A(href='#!') по популярности
+
+				+e.row.row
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+				+b.pagination._default
+					ul
+						li
+							a(href='#!') 1
+						li.is-active
+							a(href='#!') 2
+						li
+							a(href='#!') 3
+						li
+							a(href='#!') ...
+						li
+							a(href='#!') 12
+						li
+							a(href='#!') 13
+		//end catalog
+
+		include partials/_why-us
+
+		include partials/_ask

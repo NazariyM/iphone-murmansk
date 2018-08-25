@@ -1,0 +1,19 @@
+mixin popup(el)
+	case el.name
+
+		when 'call-popup'
+			+b.popup(data-popup-id='call-popup', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')
+					+b.call-block
+						+e.text
+							+e.title.title
+								h2 Обратный звонок
+							+e.P.sub-title Оставьте заявку и мы перезвоним Вам!
+						+e.FORM.form(action='#!' method='POST')
+							+e.form-field
+								+b.INPUT.input(type='text' name='' placeholder='Ваше имя' required)
+							+e.form-field
+								+b.INPUT.input(type='text' name='' placeholder='Номер телефона' required)
+							+e.form-submit-wrap
+								+e.INPUT.form-submit.btn._blue(type='submit' value='отправить заявку')

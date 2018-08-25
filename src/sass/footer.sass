@@ -1,0 +1,86 @@
+@import helpers/all
+
+.footer
+   background-color: #f2f5f7
+   li
+      &:not(:last-child)
+         margin-bottom: 5px
+   &__container
+      display: flex
+      align-items: flex-start
+      justify-content: space-between
+      padding: 45px 15px 30px
+      +sm
+         flex-direction: column
+         align-items: center
+         padding: 35px 15px 30px
+      ul
+         a
+            +trs
+            &:hover
+               color: $color3
+   &__logo
+      flex: 0 0 196px
+      margin-top: 7px
+      +md
+         flex: 0 0 160px
+      +sm
+         flex: 0 1 auto
+         width: 140px
+         margin-bottom: 25px
+   &__products
+      flex: 0 0 270px
+      margin: 0 70px 0 120px
+      column-count: 2
+      column-gap: 40px
+      +md
+         margin: 0
+      +sm
+         display: none
+   &__nav
+      flex: 0 0 220px
+      +md
+         display: none
+      +sm
+         display: block
+         flex: 0 1 auto
+         margin-bottom: 25px
+      
+   &__info
+      padding: 15px 0
+      background-color: #dbe1e6
+      font-size: 15px
+      line-height: 20px
+      color: $color2
+      +sm
+         text-align: center
+      a
+         border-bottom: 1px solid rgba($color2, .8)
+         +trs
+         &:hover
+            border-bottom-color: transparent
+      &-container
+         display: flex
+         align-items: center
+         +md
+            flex-direction: column
+            align-items: center
+         > p
+            margin-right: 115px
+            +md
+               margin-right: 0
+         > *
+            +md
+               margin-bottom: 10px
+         > a
+            +sm
+               order: -1
+   &__dev
+      margin-left: auto
+      +md
+         margin: 0
+         order: 1
+   &__basket
+      margin-right: 50px
+      +md
+         margin-right: 0

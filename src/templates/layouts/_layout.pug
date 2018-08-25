@@ -1,0 +1,25 @@
+include ../bemto/index
+include ../mixins/all
+include ../partials/_popups
+doctype html
+html(lang='ru')
+
+  block variables
+
+  head
+    include _head
+
+  body(class=bodyClass)
+    block header
+      include ../partials/_header
+    block content
+
+    block modals
+      +popup({name: 'call-popup'})
+
+    block footer
+      include ../partials/_footer
+
+    //LOAD SCRIPTS
+    block scripts
+      script(type="text/javascript" src="js/app.js")

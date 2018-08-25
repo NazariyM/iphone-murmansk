@@ -1,0 +1,80 @@
+---
+title: Корзина
+---
+extends layouts/_layout
+
+block variables
+	-headerClass = '_white'
+
+block content
+
+	+b.MAIN.main
+
+		+breadcrumbs(null, 'Главная', 'Корзина')
+
+		//begin cart
+		+b.SECTION.cart
+			+e.container.container
+				+e.title.title
+					h2 Ваши данные для оформления заказа
+				+e.FORM.form(action='#!' method='POST')
+					+e.form-inner
+						+e.data
+							+e.form-field.form-field
+								+b.LABEL
+									span ФИО
+										sup *
+									+b.INPUT.input(type='text' name='' required)
+							+e.form-field.form-field
+								+b.LABEL
+									span Телефон
+										sup *
+									+b.INPUT.input(type='text' name='' required)
+							+e.form-field.form-field
+								+b.LABEL
+									span E-mail
+										sup *
+									+b.INPUT.input(type='text' name='' required)
+						+e.options
+							+e.H4.options-title.title Доставка
+							+b.check-box.cart__options-check
+								+e.INPUT(id='check-1' type='checkbox' name='')
+								+e.LABEL(for='check-1')
+									+e.square
+										+i('check-mark', 'check-box__icon')
+									+e.SPAN Курьером по Мурманску
+							+b.check-box.cart__options-check
+								+e.INPUT(id='check-2' type='checkbox' name='')
+								+e.LABEL(for='check-2')
+									+e.square
+										+i('check-mark', 'check-box__icon')
+									+e.SPAN Самовывоз
+
+							+e.options-field.form-field
+								+b.LABEL
+									span Адрес
+									+b.INPUT.input(type='text' name='')
+
+						+e.options
+							+e.H4.options-title.title Оплата
+							+b.check-box.cart__options-check
+								+e.INPUT(id='check-3' type='checkbox' name='')
+								+e.LABEL(for='check-3')
+									+e.square
+										+i('check-mark', 'check-box__icon')
+									+e.SPAN Наличный расчет
+							+b.check-box.cart__options-check
+								+e.INPUT(id='check-4' type='checkbox' name='')
+								+e.LABEL(for='check-4')
+									+e.square
+										+i('check-mark', 'check-box__icon')
+									+e.SPAN Безналичный расчет
+
+					+e.result
+						+e.result-text
+							span Общая стоимость заказа:
+							+e.result-price
+								span 48 000
+								| руб.
+						+e.INPUT.form-submit.btn._blue(type='submit' value='Подтвердить заказ')
+		//end cart

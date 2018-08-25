@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Корзина</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#249bff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css">
+  </head>
+  <body>
+    <!--BEGIN header-->
+    <header class="header header_white">
+      <div class="header__info">
+        <div class="header__info-container container">
+          <nav class="header__nav">
+            <ul>
+              <li>
+                <a href="#!">О магазине</a>
+              </li>
+              <li>
+                <a href="#!">Оплата и доставка</a>
+              </li>
+              <li>
+                <a href="#!">Контакты</a>
+              </li>
+              <li>
+                <a href="#!">Сервисный центр</a>
+              </li>
+            </ul>
+            <a class="header__contact-link header__contact-link_mob" data-popup-target="call-popup" href="#!">Обратный звонок</a>
+          </nav>
+          <div class="header__contact">
+            <a class="header__contact-tel" href="tel:+74959603154">+7 495 960-31-54</a>
+            <a class="header__contact-link" data-popup-target="call-popup" href="#!">Обратный звонок</a>
+          </div>
+          <button class="header__nav-btn" type="button">
+            <div class="header__nav-btn-burger">
+              <div class="header__nav-btn-lines"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="header__container container">
+        <div class="header__actions">
+          <a class="header__logo" href="#!">
+            <img src="img/other/logo_black.png" alt="Iphone Murmansk" title="" />
+            <h1>Iphone Murmansk</h1>
+          </a>
+          <div class="header__search">
+            <form class="search-form search-form_white" action="#!" method="POST">
+              <div class="search-form__field">
+                <label for="header-search">
+                  <svg class="icon icon-search ">
+                    <use xlink:href="img/sprite.svg#icon-search"></use>
+                  </svg>
+                </label>
+                <input id="header-search" type="text" name="" placeholder="Поиск товаров" required="required" autocomplete="off" />
+              </div>
+            </form>
+          </div>
+          <div class="basket-block basket-block_black header__basket">
+            <a class="basket-block__link" href="#!">
+              <svg class="icon icon-cart ">
+                <use xlink:href="img/sprite.svg#icon-cart"></use>
+              </svg>
+              <span>13</span>
+            </a>
+            <div class="basket-block__text">
+              <span>Корзина:</span>
+              <div class="basket-block__sum">
+                <span>23 000</span> руб.</div>
+            </div>
+          </div>
+        </div>
+        <div class="header__products">
+          <ul>
+            <li>
+              <a href="#!">iPhone 6</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 6 Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 6s</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 6s Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 7</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 7 Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 8</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 8 Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone X</a>
+            </li>
+            <li>
+              <a href="#!">Аксессуары</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!--END header-->
+    <main class="main" role="main">
+      <div class="breadcrumbs">
+        <div class="breadcrumbs__container container">
+          <ul>
+            <li>
+              <a href="#!">Главная</a>
+            </li>
+            <li class="is-active">
+              <a href="#!">Корзина</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--begin cart-->
+      <section class="cart">
+        <div class="cart__container container">
+          <div class="cart__title title">
+            <h2>Ваши данные для оформления заказа</h2>
+          </div>
+          <form class="cart__form" action="#!" method="POST">
+            <div class="cart__form-inner">
+              <div class="cart__data">
+                <div class="cart__form-field form-field">
+                  <label>
+                    <span>ФИО
+                      <sup>*</sup>
+                    </span>
+                    <input class="input" type="text" name="" required="required" />
+                  </label>
+                </div>
+                <div class="cart__form-field form-field">
+                  <label>
+                    <span>Телефон
+                      <sup>*</sup>
+                    </span>
+                    <input class="input" type="text" name="" required="required" />
+                  </label>
+                </div>
+                <div class="cart__form-field form-field">
+                  <label>
+                    <span>E-mail
+                      <sup>*</sup>
+                    </span>
+                    <input class="input" type="text" name="" required="required" />
+                  </label>
+                </div>
+              </div>
+              <div class="cart__options">
+                <h4 class="cart__options-title title">Доставка</h4>
+                <div class="check-box cart__options-check">
+                  <input id="check-1" type="checkbox" name="" />
+                  <label for="check-1">
+                    <span class="check-box__square">
+                      <svg class="icon icon-check-mark check-box__icon">
+                        <use xlink:href="img/sprite.svg#icon-check-mark"></use>
+                      </svg>
+                    </span>
+                    <span>Курьером по Мурманску</span>
+                  </label>
+                </div>
+                <div class="check-box cart__options-check">
+                  <input id="check-2" type="checkbox" name="" />
+                  <label for="check-2">
+                    <span class="check-box__square">
+                      <svg class="icon icon-check-mark check-box__icon">
+                        <use xlink:href="img/sprite.svg#icon-check-mark"></use>
+                      </svg>
+                    </span>
+                    <span>Самовывоз</span>
+                  </label>
+                </div>
+                <div class="cart__options-field form-field">
+                  <label>
+                    <span>Адрес</span>
+                    <input class="input" type="text" name="" />
+                  </label>
+                </div>
+              </div>
+              <div class="cart__options">
+                <h4 class="cart__options-title title">Оплата</h4>
+                <div class="check-box cart__options-check">
+                  <input id="check-3" type="checkbox" name="" />
+                  <label for="check-3">
+                    <span class="check-box__square">
+                      <svg class="icon icon-check-mark check-box__icon">
+                        <use xlink:href="img/sprite.svg#icon-check-mark"></use>
+                      </svg>
+                    </span>
+                    <span>Наличный расчет</span>
+                  </label>
+                </div>
+                <div class="check-box cart__options-check">
+                  <input id="check-4" type="checkbox" name="" />
+                  <label for="check-4">
+                    <span class="check-box__square">
+                      <svg class="icon icon-check-mark check-box__icon">
+                        <use xlink:href="img/sprite.svg#icon-check-mark"></use>
+                      </svg>
+                    </span>
+                    <span>Безналичный расчет</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="cart__result">
+              <div class="cart__result-text">
+                <span>Общая стоимость заказа:</span>
+                <div class="cart__result-price">
+                  <span>48 000</span>руб.</div>
+              </div>
+              <input class="cart__form-submit btn btn_blue" type="submit" value="Подтвердить заказ" />
+            </div>
+          </form>
+        </div>
+      </section>
+      <!--end cart-->
+    </main>
+    <div class="popup" data-popup-id="call-popup" tabindex="-1" role="dialog">
+      <div class="popup__container">
+        <div class="popup__close js-popup-close">
+          <svg class="icon icon-close ">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </div>
+        <div class="call-block">
+          <div class="call-block__text">
+            <div class="call-block__title title">
+              <h2>Обратный звонок</h2>
+            </div>
+            <p class="call-block__sub-title">Оставьте заявку и мы перезвоним Вам!</p>
+          </div>
+          <form class="call-block__form" action="#!" method="POST">
+            <div class="call-block__form-field">
+              <input class="input" type="text" name="" placeholder="Ваше имя" required="required" />
+            </div>
+            <div class="call-block__form-field">
+              <input class="input" type="text" name="" placeholder="Номер телефона" required="required" />
+            </div>
+            <div class="call-block__form-submit-wrap">
+              <input class="call-block__form-submit btn btn_blue" type="submit" value="отправить заявку" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--begin footer-->
+    <footer class="footer">
+      <div class="footer__container container">
+        <a class="footer__logo" href="#!">
+          <img src="img/other/logo_gray.png" alt="image" title="" />
+        </a>
+        <div class="footer__products">
+          <ul>
+            <li>
+              <a href="#!">iPhone 6</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 6 Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 6s</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 6s Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 7</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 7 Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 8</a>
+            </li>
+            <li>
+              <a href="#!">iPhone 8 Plus</a>
+            </li>
+            <li>
+              <a href="#!">iPhone X</a>
+            </li>
+            <li>
+              <a href="#!">Аксессуары</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__nav">
+          <ul>
+            <li>
+              <a href="#!">О магазине</a>
+            </li>
+            <li>
+              <a href="#!">Оплата и доставка</a>
+            </li>
+            <li>
+              <a href="#!">Контакты</a>
+            </li>
+            <li>
+              <a href="#!">Сервисный центр</a>
+            </li>
+          </ul>
+        </div>
+        <div class="basket-block basket-block_black footer__basket">
+          <a class="basket-block__link" href="#!">
+            <svg class="icon icon-cart ">
+              <use xlink:href="img/sprite.svg#icon-cart"></use>
+            </svg>
+            <span>13</span>
+          </a>
+          <div class="basket-block__text">
+            <span>Корзина</span>
+            <div class="basket-block__sum">
+              <span>23 000</span> руб.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__info">
+        <div class="footer__info-container container">
+          <p>© 2018 «IPhone Мурманск». Все права защищены.</p>
+          <a href="#!">Политика конфиденциальности</a>
+          <div class="footer__dev">
+            <span>Разработка</span>
+            <a href="#!">FreshDigital</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--end footer-->
+    <!--LOAD SCRIPTS-->
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

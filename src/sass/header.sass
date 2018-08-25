@@ -1,0 +1,225 @@
+@import helpers/all
+
+.header
+   $parent: &
+   &_transparent
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      z-index: 1
+   &_white
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      padding: 0 0 13px
+      z-index: 111
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05)
+      background-color: $white
+      
+   &_white &__products ul li a
+      color: $color1
+   &.is-fixed
+      position: fixed
+      
+   &__info
+      padding: 5px 0
+      background-color: $color1
+      +sm
+         padding: 6px 0
+      &-container
+         display: flex
+         justify-content: space-between
+         align-items: center
+   
+   &__nav
+      +sm
+         display: flex
+         flex-direction: column
+         justify-content: center
+         position: absolute
+         top: 60px
+         left: 0
+         width: 100%
+         height: 100vh
+         z-index: 10
+         overflow: auto
+         opacity: 0
+         border: 0
+         padding: 0 0 60px
+         visibility: hidden
+         transform: translate3d(0, 100px, 0)
+         transition: transform .4s ease, opacity .4s ease, visibility 0s .4s, -webkit-transform .4s ease
+         background: $color3
+         text-align: center
+      &.is-active
+         opacity: 1
+         visibility: visible
+         transform: translate3d(0, 0, 0)
+         transition: transform .4s ease, opacity .4s ease, visibility 0s 0s, -webkit-transform .4s ease
+      > ul
+         display: flex
+         +sm
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            overflow: auto
+         li
+            &:not(:last-child)
+               margin-right: 29px
+               +md
+                  margin-right: 15px
+               +sm
+                  margin: 0 0 20px
+            a
+               font-size: 15px
+               line-height: 30px
+               color: $color2
+               +trs
+               +sm
+                  color: $white
+                  +f('dpro700')
+                  text-transform: uppercase
+                  font-size: 16px
+                  &:hover
+                     color: $color1
+               &:hover
+                  color: $white
+   &__nav-btn
+      $parent: &
+      display: none
+      border: 0
+      outline: 0
+      padding: 0
+      margin-left: 30px
+      z-index: 11
+      +sm
+         display: block
+      
+      &.is-active span
+         color: $color1
+      
+      &-burger
+         margin: auto
+         width: 40px
+         height: 48px
+         cursor: pointer
+      &-lines
+         width: 40px
+         height: 3px
+         &:after, &:before
+            width: 40px
+            height: 3px
+         position: relative
+         transform: translateY(25px)
+         background: white
+         transition: all .3s
+         #{$parent}.is-active &
+            background: rgba(255, 255, 255, 0)
+         &:before
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 10px
+            background: white
+            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+         &:after
+            content: ""
+            position: absolute
+            left: 0
+            top: 10px
+            background: white
+            transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+         #{$parent}.is-active &
+            &:after
+               top: 0
+               transform: rotate(45deg)
+               transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+            &:before
+               bottom: 0
+               transform: rotate(-45deg)
+               transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+   
+   &__contact
+      &-tel
+         margin-right: 15px
+         +f('dpro500', 16)
+         color: $white
+         +trs
+         +sm
+            margin-right: 0
+            font-size: 15px
+         &:hover
+            color: $color3
+      &-link
+         font-size: 15px
+         color: $color3
+         border-bottom: 1px dotted currentColor
+         +trs
+         +sm
+            display: none
+         &_mob
+            display: none
+            color: $white
+            +f('dpro700', 16)
+            text-transform: uppercase
+            border-bottom: 0
+            +sm
+               display: inline-block
+               margin-top: 20px
+         &:hover
+            border-bottom-color: transparent
+         
+   &__actions
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 27px 0 24px
+      border-bottom: 1px solid rgba($white, .2)
+      +sm
+         padding: 10px 0 15px
+         flex-wrap: wrap
+      #{$parent}_white &
+         border-bottom-color: #dbe1e6
+   &__logo
+      flex: 0 1 196px
+      +hide-text
+      +sm
+         flex: 0 0 108px
+   &__search
+      flex: 0 1 625px
+      margin-right: -25px
+      padding: 0 20px
+      +md
+         margin-right: 0
+         padding: 0 30px
+      +sm
+         order: 1
+         flex: 1 1 100%
+         padding: 0
+         margin-top: 15px
+   &__products
+      padding: 15px 20px 0
+      +md
+         padding: 15px 0 0
+      +sm
+         display: none
+      ul
+         display: flex
+         justify-content: space-between
+         li
+            a
+               +f('dpro500')
+               line-height: 20px
+               color: $white
+               +trs
+               +md
+                  font-size: 12px
+               &:hover
+                  color: $color3
+   &__basket
+      flex-shrink: 0
+      margin-right: 50px
+      +md
+         margin-right: 0

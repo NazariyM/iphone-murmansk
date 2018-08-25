@@ -1,0 +1,10 @@
+mixin product-item(classMod)
+	+b.product-item(class= classMod)
+		+e.inner
+			+e.img
+				+e.IMG(src='img/products/product_img-1.png' alt='image')
+			+e.name
+				h6 iPhone 7 32GB Black
+			+e.actions
+				+e.A.actions-btn._white(href='#!') Подробнее
+				+e.A.actions-btn._blue(href='#!') купить

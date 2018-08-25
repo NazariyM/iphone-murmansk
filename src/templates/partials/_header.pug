@@ -1,0 +1,66 @@
+//BEGIN header
++b.HEADER.header(class= headerClass)
+	+e.info
+		+e.info-container.container
+			+e.NAV.nav
+				-
+					navList = [
+					'О магазине',
+					'Оплата и доставка',
+					'Контакты',
+					'Сервисный центр'
+					]
+				ul
+					for navLink in navList
+						li: a(href='#!')= navLink
+				+e.A.contact-link._mob(data-popup-target='call-popup' href='#!') Обратный звонок
+
+			+e.contact
+				+e.A.contact-tel(href='tel:+74959603154') +7 495 960-31-54
+				+e.A.contact-link(data-popup-target='call-popup' href='#!') Обратный звонок
+			+e.BUTTON.nav-btn(type='button')
+				+e.nav-btn-burger
+					+e.nav-btn-lines
+
+	+e.container.container
+		+e.actions
+			+e.A.logo(href='#!')
+				if headerClass === '_white'
+					+e.IMG(src='img/other/logo_black.png' alt='Iphone Murmansk')
+				else
+					+e.IMG(src='img/other/logo_white.png' alt='Iphone Murmansk')
+				h1 Iphone Murmansk
+			+e.search
+				+b.FORM.search-form(class= headerClass === '_white' ? '_white' : false action='#!' method='POST')
+					+e.field
+						+e.LABEL(for='header-search')
+							+i('search')
+						+b.INPUT(id='header-search' type='text' name='' placeholder='Поиск товаров' required autocomplete='off')
+			+b.basket-block(class= headerClass === '_white' ? '_black' : '_white').header__basket
+				+e.A.link(href='#!')
+					+i('cart')
+					span 13
+				+e.text
+					+e.SPAN Корзина:
+					+e.sum
+						span 23 000
+						= ' '
+						| руб.
+		+e.products
+			-
+				prodList = [
+				'iPhone 6',
+				'iPhone 6 Plus',
+				'iPhone 6s',
+				'iPhone 6s Plus',
+				'iPhone 7',
+				'iPhone 7 Plus',
+				'iPhone 8',
+				'iPhone 8 Plus',
+				'iPhone X',
+				'Аксессуары'
+				]
+			ul
+				for prodLink in prodList
+					li: a(href='#!')= prodLink
+//END header

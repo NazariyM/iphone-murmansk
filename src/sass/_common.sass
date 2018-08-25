@@ -1,0 +1,87 @@
+body
+   min-width: 320px
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   +f('dpro400', 16, 24)
+   color: $color1
+   &.is-locked
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 0
+      overflow: hidden
+
+.container
+   max-width: 1170px
+   margin: 0 auto
+   padding: 0 15px
+.row
+   display: flex
+   flex-wrap: wrap
+   margin: 0 -15px
+   +md
+      justify-content: center
+      margin: 0 -10px
+   +sm
+      flex-direction: column
+.col
+   flex: 0 1 25%
+   padding: 0 15px
+   .is-ie &
+      max-width: 292px
+   +md
+      padding: 0 10px
+      flex: 0 1 33.33333%
+   +sm
+      flex: 1 1 auto
+   &:nth-child(1) ~ &
+      +sm
+         padding: 30px 15px 0
+   &:nth-child(4) ~ &
+      padding: 30px 15px 0
+   &:nth-child(3) ~ &
+      +md
+         padding: 20px 10px 0
+         
+.has-fixed-header
+   padding-top: 215px
+      
+.section
+   padding: 65px 0 80px
+   +sm
+      padding: 50px 0 60px
+
+.main
+   overflow: hidden
+
+.title
+   +f('dpro700', 36, 56)
+   color: $color1
+   +sm
+      font-size: 32px
+      line-height: 34px
+      
+.btn
+   display: inline-block
+   border-radius: 6px
+   +f('dpro700', 15, 24)
+   text-transform: uppercase
+   outline: 0
+   +trs
+   &_blue
+      padding: 15px 48px
+      color: $white
+      background-color: $color3
+      +sm
+         padding: 12px 46px
+      &:hover
+         background: darken($color3, 17)
+   &_white
+      padding: 13px 45px
+      color: $color3
+      border: 2px solid #dbe1e6
+      &:hover
+         background: $color3
+         color: $white
+         border-color: $color3

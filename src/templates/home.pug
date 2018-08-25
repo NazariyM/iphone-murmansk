@@ -1,0 +1,167 @@
+---
+title: Главная
+---
+extends layouts/_layout
+
+block variables
+	-headerClass = '_transparent'
+
+block content
+
+	+b.MAIN.main
+		//begin screen
+		+b.SECTION.screen
+			+e.slider
+				-i = 0
+				while i < 2
+					+e.slider-item
+						+e.slider-img(style='background-image: url(img/bg/screen-sld_1.jpg)')
+						+e.slider-container.container
+							+e.slider-inner
+								+e.slider-title.title
+									+e.H2 IPhone 7 за 29 900 руб. с бесплатной доставкой по Мурманску!
+								+e.A.slider-btn.btn._blue(href='#!') купить
+					+e.slider-item
+						+e.slider-img(style='background-image: url(img/bg/screen-sld_2.jpg)')
+						+e.slider-container.container
+							+e.slider-inner
+								+e.slider-title.title
+									+e.H2 IPhone 5 за 15 000 руб. с платной доставкой!
+								+e.A.slider-btn.btn._blue(href='#!') купить
+					-i++
+		//end screen
+
+		//begin pop-products
+		+b.SECTION.pop-products.section
+			+e.container.container
+				+e.title.title
+					h2 Популярные модели IPhone
+				+e.row.row
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+					+product-item('col')
+				+e.choose
+					+e.A.choose-btn.btn._white(href='#!') выбрать свой IPhone
+		//end pop-products
+
+		//begin new-models
+		+b.SECTION.new-models.section
+			+e.container.container
+				+e.title.title
+					h2 Новые модели IPhone по выгодным ценам
+				+e.row.row
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-2.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 6
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-2.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 6 plus
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-3.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 6s
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-4.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 6s Plus
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-5.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 7
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-6.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 7 Plus
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-7.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 8
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+					+b.col
+						+b.A.novelty-item(href='#!')
+							+e.inner
+								+e.img
+									+e.IMG(src='img/products/product_img-7.png' alt='image')
+								+e.text
+									+e.name
+										h6 iPhone 8 Plus
+									+e.price от
+										span 29 900
+										= ' '
+										| руб.
+
+				+b.promo-block.new-models__promo(style='background-image: url(img/bg/promo_bg.jpg)')
+					+e.text
+						+e.H6.title iPhone X
+						+e.price от
+							span 29 900
+							= ' '
+							| руб.
+		//end new-models
+
+		include partials/_why-us
+
+		include partials/_ask

@@ -1,0 +1,6 @@
+mixin breadcrumbs(classMod, ...itemText)
+	+b.breadcrumbs(class= classMod)
+		+e.container.container
+			ul
+				each text, i in itemText
+					li(class= i === itemText.length -1 ? 'is-active' : ''): a(href='#!')= text

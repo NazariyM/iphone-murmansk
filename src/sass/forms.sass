@@ -1,0 +1,102 @@
+@import helpers/all
+
+.search-form
+   $parent: &
+   &__field
+      position: relative
+      label
+         position: absolute
+         top: 0
+         left: 0
+         width: 50px
+         height: 100%
+         display: flex
+         align-items: center
+         justify-content: center
+      input
+         width: 100%
+         height: 40px
+         padding: 0 30px 0 47px
+         +f('dpro400', 15, 40)
+         border-radius: 6px
+         border: 1px solid rgba($white, .2)
+         background-color: rgba($white, .2)
+         color: $white
+         +placeholder-color($white)
+         #{$parent}_white &
+            border: 1px solid #dbe1e6
+            background-color: #f2f5f7
+            color: $color1
+            +placeholder-color($color1)
+      svg
+         position: relative
+         left: 3px
+         font-size: 16px
+         fill: $white
+         #{$parent}_white &
+            fill: $color1
+
+.input
+   width: 100%
+   height: 50px
+   padding: 0 23px
+   +f('dpro400', 15, 50)
+   border-radius: 6px
+   border: 1px solid #dbe1e6
+   background-color: #f2f5f7
+   +sm
+      padding: 0 20px
+
+.check-box
+   $parent: &
+   position: relative
+   label
+      display: inline-flex
+      align-items: center
+      +f('dpro700', 16)
+      color: $black
+      cursor: pointer
+   &__square
+      position: relative
+      width: 14px
+      height: 14px
+      border-radius: 2px
+      margin-right: 15px
+      border: 1px solid #dbe1e6
+      background-color: #f2f5f7
+      font-size: 0
+   &__icon
+      opacity: 0
+      transform: scale(.6)
+      position: absolute
+      top: 1px
+      right: 1px
+      width: 9px
+      height: 9px
+      transition: .3s ease-in-out
+      fill: $color1
+   input
+      display: none
+      &:checked ~ label #{$parent}__icon
+         opacity: 1
+         transform: scale(1)
+
+.form-field
+   label
+      display: flex
+      align-items: flex-end
+      font-size: 15px
+      +sm
+         flex-direction: column
+         align-items: flex-start
+      span
+         flex: 0 0 100px
+         padding: 0 15px 5px 0
+         +sm
+            flex: 0 1 auto
+      sup
+         color: #ff0000
+         font-size: 1em
+   input
+      height: 40px
+      line-height: 40px

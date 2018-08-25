@@ -1,0 +1,88 @@
+.why-us
+   padding: 65px 0 76px
+   background-color: $color1
+   +sm
+      padding: 50px 0 60px
+   &__top-text
+      margin-bottom: 50px
+      +sm
+         margin-bottom: 30px
+      p
+         color: $color2
+   &__title
+      margin-bottom: 10px
+      color: $white
+   &__item
+      display: flex
+      align-items: center
+      flex: 0 1 33.33333%
+      padding: 0 15px
+      .is-ie &
+         max-width: 390px
+      +md
+         flex: 0 1 50%
+      +sm
+         flex: 0 1 auto
+      &:nth-child(1) ~ &
+         +sm
+            padding: 20px 15px 0
+      &:nth-child(3) ~ &
+         padding: 40px 15px 0
+      &:nth-child(3) .why-us__item-text
+         max-width: 200px
+         +sm
+            max-width: none
+      &:nth-child(5) .why-us__item-text
+         margin-top: -5px
+         +sm
+            margin-top: 0
+   
+      &-icon-wrap
+         position: relative
+         display: flex
+         align-items: center
+         justify-content: center
+         flex: 0 0 120px
+         height: 120px
+         margin-right: 27px
+         border: 1px solid rgba($white, .2)
+         border-radius: 50%
+         +sm
+            flex: 0 0 80px
+            height: 80px
+         &::after
+            +vcenter
+            width: 100px
+            height: 100px
+            background: rgba($white, .05)
+            border-radius: 50%
+            content: ''
+            +sm
+               width: 65px
+               height: 65px
+      &-icon
+         position: relative
+         top: -3px
+         font-size: 46px
+         fill: $color3
+         +sm
+            top: 0
+            font-size: 35px
+         &.icon-thumb-up
+            font-size: 41px
+            +sm
+               font-size: 32px
+         &.icon-sales-ticket,
+         &.icon-delivery-truck
+            top: 0
+
+      &-text
+         flex: 0 1 calc(100% - 147px)
+         margin-top: -5px
+         font-size: 22px
+         line-height: 30px
+         color: $white
+         +sm
+            flex: 0 1 auto
+            font-size: 16px
+            line-height: 22px
