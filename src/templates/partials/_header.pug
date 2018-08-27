@@ -26,9 +26,10 @@
 		+e.actions
 			+e.A.logo(href='#!')
 				if headerClass === '_white'
-					+e.IMG(src='img/other/logo_black.png' alt='Iphone Murmansk')
+					+e.IMG.logo-img(src='img/other/logo_black.png' alt='Iphone Murmansk')
 				else
-					+e.IMG(src='img/other/logo_white.png' alt='Iphone Murmansk')
+					+e.IMG.logo-img(src='img/other/logo_white.png' alt='Iphone Murmansk')
+					+e.IMG.logo-img._hidden(src='img/other/logo_black.png' alt='Iphone Murmansk')
 				h1 Iphone Murmansk
 			+e.search
 				+b.FORM.search-form(class= headerClass === '_white' ? '_white' : false action='#!' method='POST')

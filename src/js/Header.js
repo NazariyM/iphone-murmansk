@@ -15,7 +15,7 @@ class Header {
   }
 
   init() {
-    if (this.header.classList.contains('header_white')) this.initFix();
+    this.initFix();
     if (!Resp.isDesk) {
       this.toggleNav();
       this.onResize();
@@ -30,9 +30,9 @@ class Header {
 
     function toggleHeader() {
       if (window.pageYOffset > 0 && !_this.header.classList.contains(css.menuActive)) {
-        _this.header.classList.add(css.fixed);
+        _this.header.classList.add('header_fixed');
       } else {
-        _this.header.classList.remove(css.fixed);
+        _this.header.classList.remove('header_fixed');
       }
     }
 

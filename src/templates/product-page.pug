@@ -8,12 +8,11 @@ block variables
 
 block content
 
-	+b.MAIN.has-fixed-header
-
-		+breadcrumbs(null, 'Главная', 'Apple iPhone 8 Plus', 'Apple iPhone 8 Plus - 256 Гб серебристый (Айфон 8 Плюс)')
+	+b.MAIN
 
 		//begin product
 		+b.SECTION.product
+			+breadcrumbs('product__breadcrumbs', 'Главная', 'Apple iPhone 8 Plus', 'Apple iPhone 8 Plus - 256 Гб серебристый (Айфон 8 Плюс)')
 			+e.container.container
 				+e.view
 					+e.view-img

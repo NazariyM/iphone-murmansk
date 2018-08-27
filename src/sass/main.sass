@@ -78,7 +78,11 @@
       margin-top: 30px
 
 .catalog
-   padding: 50px 0 80px
+   padding: 265px 0 80px
+   +md
+      padding: 170px 0 80px
+   +sm
+      padding: 160px 0 80px
    &__top
       display: flex
       margin-bottom: 20px
@@ -91,6 +95,7 @@
          flex: 1 1 auto
          +md
             flex-direction: column
+            align-items: flex-end
          +sm
             align-items: center
    &__title
@@ -113,7 +118,14 @@
    &__filter
 
 .product
-   padding: 52px 0 30px
+   padding: 215px 0 30px
+   +md
+      padding: 193px 0 30px
+   +sm
+      padding: 187px 0 30px
+   &__breadcrumbs
+      margin-bottom: 50px
+   
    &__container
       display: flex
       +sm
@@ -306,7 +318,13 @@
          flex: 0 1 50%
                
 .cart
-   padding: 45px 0 50px
+   padding: 215px 0 50px
+   +md
+      padding: 193px 0 50px
+   +sm
+      padding: 187px 0 50px
+   &__breadcrumbs
+      margin-bottom: 40px
    &__title
       margin-bottom: 30px
       +sm

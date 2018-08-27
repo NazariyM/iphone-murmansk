@@ -10,10 +10,9 @@ block content
 
 	+b.MAIN.main
 
-		+breadcrumbs(null, 'Главная', 'Корзина')
-
 		//begin cart
 		+b.SECTION.cart
+			+breadcrumbs('cart__breadcrumbs', 'Главная', 'Корзина')
 			+e.container.container
 				+e.title.title
 					h2 Ваши данные для оформления заказа
